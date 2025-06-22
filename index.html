@@ -1,10 +1,337 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=home.html" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="home.html">home.html</a>...</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Editor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">📄 Resume Editor</div>
+        <a href="#download-modal" class="download-btn">📥 Download PDF</a>
+    </div>
+    
+    <div class="resume-container">
+        <div class="edit-hint">
+            💡 Click on any text to edit it instantly!
+        </div>
+        
+        <div id="resume-content" class="resume-content">
+            <div class="header">
+                <div class="name" contenteditable="true" data-placeholder="Your Name">Jangya Satapathy</div>
+                <div class="title" contenteditable="true" data-placeholder="Your Job Title">Front-End Engineer</div>
+                <div class="contact">
+                    <span contenteditable="true" data-placeholder="Email">email@example.com</span>
+                    <span contenteditable="true" data-placeholder="Phone">123-456-7890</span>
+                    <span contenteditable="true" data-placeholder="Website">yourwebsite.com</span>
+                    <span contenteditable="true" data-placeholder="GitHub">github.com/username</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Experience</div>
+                <div class="experience-item">
+                    <div class="job-title" contenteditable="true" data-placeholder="Job Title @ Company">Senior Member Technical Staff @ Oracle</div>
+                    <div class="duration" contenteditable="true" data-placeholder="Duration // Location">June 2021 - Present // Bangalore, KA</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Responsibility description">Develop modern, performant, and robust UI for better digital customer experience in communication industry.</li>
+                        <li contenteditable="true" data-placeholder="Responsibility description">Communicate and collaborate with multi-disciplinary teams of engineers, designers, producers, clients, and stakeholders on a daily basis.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title" contenteditable="true" data-placeholder="Job Title @ Company">Senior Developer @ SAP</div>
+                    <div class="duration" contenteditable="true" data-placeholder="Duration // Location">July 2018 - June 2021 // Bangalore, KA</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Responsibility description">Worked with teams across different location of SAP to develop software programs using MEAN stack for a cloud tool (build.me) which helps in designing and building enterprise app.</li>
+                        <li contenteditable="true" data-placeholder="Responsibility description">Helped reviewing code, optimizing website performance and introducing new features.</li>
+                        <li contenteditable="true" data-placeholder="Responsibility description">Wrote a node script to export data for an ex-customer and delete the same from system.</li>
+                        <li contenteditable="true" data-placeholder="Responsibility description">Interfaced with product owner on a weekly basis, providing technological expertise and statistics about the work progress.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title" contenteditable="true" data-placeholder="Job Title @ Company">Programmer Analyst @ Cognizant</div>
+                    <div class="duration" contenteditable="true" data-placeholder="Duration // Location">June 2016 - July 2018 // Bangalore, KA</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Responsibility description">Developed and shipped highly interactive web applications for Apple using React framework.</li>
+                        <li contenteditable="true" data-placeholder="Responsibility description">Accountable for bug fixing, unit testing, UX standardization, performance and accessibility across all web apps.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title" contenteditable="true" data-placeholder="Job Title @ Company">Software Engineer @ Summation IT</div>
+                    <div class="duration" contenteditable="true" data-placeholder="Duration // Location">Dec 2013 - June 2016 // Hyderabad, TS</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Responsibility description">Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, jQuery and PHP.</li>
+                        <li contenteditable="true" data-placeholder="Responsibility description">Tested sites in various browsers and devices to ensure cross-browser compatibility and mobile responsiveness.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Projects</div>
+                <div class="project-item">
+                    <div class="project-title" contenteditable="true" data-placeholder="Project Name">DepBot</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Project description">A command-based GitHub app built with Probot helps in upgrading private and public npm dependencies transitively by creating pull requests in your repositories.</li>
+                        <li contenteditable="true" data-placeholder="Project impact">Used by SAP dev teams, reduces 80% manual efforts when dealing with 100+ Git repositories.</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <div class="project-title" contenteditable="true" data-placeholder="Project Name">Timely</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Project description">Track and adjust your time spend inside ODC. The UI offers a grid table page along with dashboard and server collects data from punching devices and triggers mail every day.</li>
+                        <li contenteditable="true" data-placeholder="Project impact">Developed for an internal HR team in Cognizant, used by 400 colleagues.</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <div class="project-title" contenteditable="true" data-placeholder="Project Name">Healthcare CMS</div>
+                    <ul class="responsibilities">
+                        <li contenteditable="true" data-placeholder="Project description">A token based patient tracking app for avoiding physical queue in hospitals, developed during covid pandemic. This is a server less web App made with Angular and Firebase.</li>
+                        <li contenteditable="true" data-placeholder="Project impact">Developed for a personal clinic, operated by 2 doctors.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <div class="skills-grid">
+                    <div>
+                        <div class="skill-category">
+                            <div class="skill-category-title">Programming Languages</div>
+                            <div class="skill-list" contenteditable="true" data-placeholder="List your programming languages">JavaScript (ES6), TypeScript, HTML, CSS/Sass, Shell Script, PHP</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-category-title">Libraries & Frameworks</div>
+                            <div class="skill-list" contenteditable="true" data-placeholder="List your frameworks">jQuery, React, Angular, SAP UI5, Node.js, Express, Bootstrap, Material UI</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-category">
+                            <div class="skill-category-title">Tools & Platforms</div>
+                            <div class="skill-list" contenteditable="true" data-placeholder="List your tools">Git, Gulp, Webpack, Heroku, Docker, Firebase, Jenkins, VSCode</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-category-title">Database</div>
+                            <div class="skill-list" contenteditable="true" data-placeholder="List your databases">MySQL, MongoDB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education-item">
+                    <div class="degree" contenteditable="true" data-placeholder="University Name">Biju Patnaik University of Technology</div>
+                    <div class="duration" contenteditable="true" data-placeholder="Duration // Location">2009 - 2013 // Berhampur, OD</div>
+                    <div class="university" contenteditable="true" data-placeholder="Degree details">Bachelor of technology in electronics and communication engineering with CGPA 7.2/10.</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Achievements</div>
+                <div class="achievement-item">
+                    <div class="achievement-title" contenteditable="true" data-placeholder="Achievement title">Excellence Award</div>
+                    <div class="achievement-desc" contenteditable="true" data-placeholder="Achievement description">Received an Excellence Award from SAP UX Engineering team for exceeding the expectation in 2020 Q1.</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title" contenteditable="true" data-placeholder="Achievement title">Innovator</div>
+                    <div class="achievement-desc" contenteditable="true" data-placeholder="Achievement description">DepBot was placed at top 10 among 200 plus ideas in an innovation competition held internally by SAP.</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Interests</div>
+                <div class="interests-text" contenteditable="true" data-placeholder="List your interests">Photography, gaming, traveling, reading, riding</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Modal -->
+    <div id="download-modal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h2>📥 Download Options</h2>
+            <p>Choose your preferred download method:</p>
+            
+            <div class="modal-buttons">
+                <button class="modal-btn btn-primary" onclick="generatePDFFromCanvas()">
+                    🎨 High Quality PDF
+                </button>
+                <button class="modal-btn btn-secondary" onclick="openPDFInNewTab()">
+                    👁️ Preview PDF
+                </button>
+                <button class="modal-btn btn-outline" onclick="generatePDFFromHTML()">
+                    ⚡ Quick PDF
+                </button>
+            </div>
+            
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+
+    <div id="edit-tooltip" class="edit-tooltip">Click to edit this text</div>
+
+    <script>
+        // Show status messages in modal
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    status.style.display = 'none';
+                    // Close modal after successful download
+                    window.location.hash = '';
+                }, 3000);
+            }
+        }
+
+        // High Quality PDF Generation
+        async function generatePDFFromCanvas() {
+            try {
+                showStatus('Generating high-quality PDF...', 'info');
+                
+                const element = document.getElementById('resume-content');
+                
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                const imgWidth = 210;
+                const pageHeight = 295;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                const pdfBlob = pdf.output('blob');
+                const fileName = 'resume-high-quality.pdf';
+                
+                try {
+                    pdf.save(fileName);
+                    showStatus('✅ PDF downloaded successfully!', 'success');
+                } catch (saveError) {
+                    const url = URL.createObjectURL(pdfBlob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = fileName;
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showStatus('✅ PDF downloaded using alternative method!', 'success');
+                }
+                
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                showStatus('❌ Error generating PDF: ' + error.message, 'error');
+            }
+        }
+
+        // Quick PDF Generation
+        async function generatePDFFromHTML() {
+            try {
+                showStatus('Generating quick PDF...', 'info');
+                
+                const element = document.getElementById('resume-content');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                await pdf.html(element, {
+                    callback: function(doc) {
+                        const fileName = 'resume-quick.pdf';
+                        try {
+                            doc.save(fileName);
+                            showStatus('✅ Quick PDF downloaded successfully!', 'success');
+                        } catch (saveError) {
+                            const pdfBlob = doc.output('blob');
+                            const url = URL.createObjectURL(pdfBlob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = fileName;
+                            a.style.display = 'none';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+                            showStatus('✅ Quick PDF downloaded!', 'success');
+                        }
+                    },
+                    x: 10,
+                    y: 10,
+                    width: 190,
+                    windowWidth: 800
+                });
+                
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                showStatus('❌ Error generating PDF: ' + error.message, 'error');
+            }
+        }
+
+        // Preview PDF in new tab
+        async function openPDFInNewTab() {
+            try {
+                showStatus('Generating PDF preview...', 'info');
+                
+                const element = document.getElementById('resume-content');
+                
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                const imgWidth = 210;
+                const pageHeight = 295;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                const pdfBlob = pdf.output('blob');
+                const url = URL.createObjectURL(pdfBlob);
+                window.open(url, '_blank');
+                showStatus('✅ PDF preview opened in new tab!', 'success');
+            } catch (error) {
+                console.error('Error generating PDF preview:', error);
+                showStatus('❌ Error generating PDF preview: ' + error.message, 'error');
+            }
+        }
+    </script>
+</body>
 </html>
