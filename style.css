@@ -1,0 +1,82 @@
+/* Generic styles for the resume editor */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.download-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.download-btn:hover {
+    background: #555;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.edit-hint {
+    background: #eee;
+    color: #444;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+}
+
+.resume-content {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #222;
+    background: #fff;
+    padding: 32px;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111;
+}
